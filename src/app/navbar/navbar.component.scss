@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    width: 100%;
+    vertical-align: bottom;
+    border-bottom: 2px solid black;
+    
+    a {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

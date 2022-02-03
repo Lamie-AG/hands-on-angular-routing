@@ -1,0 +1,6 @@
+<nav>
+    <h1 routerLink="home">Angular Routing Example</h1>
+    <a *ngIf="!login.isLoggedIn" routerLink="login"><span>Login</span></a>
+    <button *ngIf="login.isLoggedIn" (click)="login.isLoggedIn = !login.isLoggedIn">Logout</button>
+    <a routerLink="products"><span>Product List</span></a>
+</nav>
