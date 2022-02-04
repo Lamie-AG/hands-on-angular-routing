@@ -10,15 +10,16 @@ import { ProductService } from 'src/app/core/product/product.service';
 })
 export class ProductDetailComponent implements OnInit {
   @Input() product!: IProduct;
+  error?: string;
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { 
-    let ean13 = route.snapshot.paramMap.get('ean13');
-    
-    if (ean13)
-      this.product = productService.getProduct(ean13);
+    this.route.data.subscribe(data => {
+      const resolvedData = data['resolvedData'];
+      this.error = resolvedData.error;
+      this.product = resolvedData.product;
+    });
   }
 
   ngOnInit(): void {
   }
-
 }
